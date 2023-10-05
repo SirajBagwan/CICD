@@ -11,6 +11,7 @@ pipeline{
                 sh "lscpu"
                 sh "lsblk"
                 sh "free -h"
+                sh "echo \"hello there\""
             }
         }
     }
