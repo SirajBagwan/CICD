@@ -10,6 +10,7 @@ pipeline{
             steps{
                 sh "lscpu"
                 sh "lsblk"
+                sh "free -h"
             }
         }
     }
