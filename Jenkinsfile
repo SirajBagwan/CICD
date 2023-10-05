@@ -9,6 +9,7 @@ pipeline{
         stage ("getting system details"){
             steps{
                 sh "lscpu"
+                sh "lsblk"
             }
         }
     }
