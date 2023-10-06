@@ -12,6 +12,7 @@ pipeline{
                 sh "lsblk"
                 sh "free -h"
                 sh "echo \"hello there\""
+                sh "echo \"hello there web hook is working \""
             }
         }
     }
