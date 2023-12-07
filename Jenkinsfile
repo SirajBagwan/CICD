@@ -9,7 +9,7 @@ pipeline{
         }
         stage("Buiding the image"){
             steps{
-                sh "docker build -t cicd:1.0.0 ." 
+                sh "docker build -t cicd:V1.0.0 ." 
             }
         }
         stage("Running the Container"){
