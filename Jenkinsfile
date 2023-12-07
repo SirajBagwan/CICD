@@ -1,18 +1,20 @@
 pipeline{
     agent any
     stages{
-        stage("pulling"){
+        stage("Copy Code From Git"){
             steps{
-                echo "pulling"
+                echo "pulling code"
+                git url: "git@github.com:SirajBagwan/CICD.git", branch: "master"
             }
         }
-        stage ("getting system details"){
+        stage(Buiding the image){
             steps{
-                sh "lscpu"
-                sh "lsblk"
-                sh "free -h"
-                sh "echo \"hello there\""
-                sh "echo \"hello there web hook is working \""
+                sh "docker build -t cicd:1.0.0 ." 
+            }
+        }
+        stage("Running the Container"){
+            steps{
+                sh "docker run -d -p 80:80 cicd:1.0.0"
             }
         }
     }
