@@ -1,0 +1,6 @@
+Version : "3.3"
+services : 
+    web : 
+        build : .
+        ports :
+            - ports : "80:80"
