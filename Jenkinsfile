@@ -7,7 +7,7 @@ pipeline{
                 git url: "git@github.com:SirajBagwan/CICD.git", branch: "master"
             }
         }
-        stage(Buiding the image){
+        stage("Buiding the image"){
             steps{
                 sh "docker build -t cicd:1.0.0 ." 
             }
