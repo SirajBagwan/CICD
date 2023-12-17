@@ -14,7 +14,7 @@ pipeline{
         }
         stage("Running the Container"){
             steps{
-                sh "docker-compose down && docker-compose up -d"
+                sh "docker run -d -p 80:80 cicd:v1.0.0"
             }
         }
     }
