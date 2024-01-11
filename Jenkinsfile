@@ -14,7 +14,7 @@ pipeline{
         }
         stage("Running the Container"){
             steps{
-                sh "docker run -d -p 80:80 cicd:v1.0.0"
+                sh "docker run -d -p 80:80 cicd:V1.0.0"
             }
         }
     }
