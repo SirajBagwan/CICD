@@ -3,4 +3,4 @@ services :
     V1.0.0 : 
         build : .
         ports :
-            - ports : "80:80"
+            - "80:80"
