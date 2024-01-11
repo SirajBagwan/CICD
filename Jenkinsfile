@@ -14,7 +14,7 @@ pipeline{
         }
         stage("Running the Container"){
             steps{
-                sh "docker-compose down && docker-compose up -d"
+                sh "docker-compose down --remove-orphans && docker-compose up -d"
             }
         }
     }
