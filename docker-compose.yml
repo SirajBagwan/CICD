@@ -1,6 +1,6 @@
 version : "3.3"
 services : 
-    V1.0.0 : 
+    v1.0.0 : 
         build : .
         ports :
             - "80:80"
