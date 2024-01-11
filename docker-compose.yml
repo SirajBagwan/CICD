@@ -1,6 +1,6 @@
 version : "3.3"
 services : 
     cicd : 
-        build : cicd
+        build : .
         ports :
             - "80:80"
