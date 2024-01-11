@@ -1,6 +1,6 @@
 version : "3.3"
 services : 
     cicd : 
-        build : .
+        build : sirajbagwan/cicd:v1.0.0
         ports :
             - "80:80"
