@@ -9,9 +9,16 @@ pipeline{
         }
         stage("Buiding the image"){
             steps{
+                sh "docker build -t cicd ." 
+            }
+        }
+        stage("Pushing the image"){
+            steps{
                 withCredentials([usernamePassword(credentialsId:"dockerHub", usernameVariable: "dockUser", passwordVariable: "dockPass")]){
-                 sh "docker login -u ${env.dockUser} -p ${env.dockPass}"   
-                } 
+                    sh "docker tag cicd ${env.dockUser}/cicd:v1.0.0"
+                    sh "docker login -u ${env.dockUser} -p ${env.dockPass}"
+                    sh "docker push ${env.dockUser}/cicd:v1.0.0"
+                }
             }
         }
         stage("Running the Container"){
