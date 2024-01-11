@@ -4,7 +4,7 @@ pipeline{
         stage("Copy Code From Git"){
             steps{
                 echo "pulling code"
-                git url: "git@github.com:SirajBagwan/CICD.git", branch: "master"
+                git url: "https://github.com/SirajBagwan/CICD.git", branch: "master"
             }
         }
         stage("Buiding the image"){
