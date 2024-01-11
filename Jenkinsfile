@@ -9,7 +9,9 @@ pipeline{
         }
         stage("Buiding the image"){
             steps{
-                sh "docker build -t cicd ." 
+                withCredentials([usernamePassword(credentialsId:"dockerHub", usernameVariable: "dockUser", passwordVariable: "dockPass")]){
+                 sh "docker login -u ${env.dockUser} -p ${env.dockPass}"   
+                } 
             }
         }
         stage("Running the Container"){
