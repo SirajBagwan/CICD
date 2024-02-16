@@ -19,5 +19,5 @@ jobs:
     
     - name: Pushing the image
       run: | 
-           docker login -u ${{ secrets.DockUser }} -p {{ secrets.DockPass }}
+           echo "${{  secrets.DockPass  }}" | docker login -u ${{ secrets.DockUser }} --password-stdin
            docker push ${{ secrets.DockUser }}/app:V1
